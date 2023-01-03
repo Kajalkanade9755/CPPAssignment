@@ -137,8 +137,8 @@ switch(ch){
     exit(0);
     break;
     default:
-    cout<<"invalid input";
-    goto l;
+    cout<<"invalid input"<<endl;
+    break;
 }
 }
 
