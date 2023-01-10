@@ -1,0 +1,36 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main(){
+ int PId;//Project ID number(4) auto increment
+int EId;//Created By number(4) = Employee ID of login Employee
+char Description[50];//Project Description string(50)
+char date[80];//Create Date date (DD/MM/YYYY format) = today’s date
+int duration;//Project Duration int(2) = number of months
+char Depat[50];//Department string(50)
+char Group[50];
+int id;
+cout<<"enter: \n";
+cin>>id;
+ifstream read;
+read.open("projects.txt");
+string ch;
+//getline(read,ch);
+//cout<<ch;
+while(!read.eof())
+{
+  getline(read,ch);  //cout<<"infile"<<endl;
+while(sscanf(ch.c_str(), "%d,%d,%100[^,],%100[^,],%d,%100[^,],%100[^,],*[\n]",&PId,&EId,Description,date,&duration,Depat,Group)==7) {
+       //cout<<"infile"<<endl;
+        if (duration == id) {
+                cout<<id<<"Id "<<endl;
+        break;
+}
+//else{
+  //  cout<<"not found"<<endl;
+//}
+}
+}
+return 0;
+}
